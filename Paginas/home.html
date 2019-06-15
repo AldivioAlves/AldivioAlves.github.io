@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8" />
+    <LINK href="../bootstrap-4.1.3-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <LINK href="../css/css.css" rel="stylesheet" type="text/css">
+    <script src="../Scripts/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="fundoOpaco" onclick="fechafundo();"></div>
+    <div id="nav" class="navbar sticky-top navbar-dark bg-light navbar-expand-lg">
+        <div class="container">
+            <img id="logoicon" src="../imgs/logo3.png" />
+            <ul id="menulist">
+                <li><a id="opçãoCorrelação" onclick="ElementosCorrelação()">CORRELAÇÃO</a></li>
+                <li><a id="opçãoCalculadora" onclick="calculadora()">PROBABILIDADE</a></li>
+                <li><a id="opçãoDescritiva" onclick="entradaDescritiva()">DESCRITIVA</a></li>
+            </ul>
+        </div>
+    </div>
+    <p id='calc'></p>
+    <center><img src="../imgs/lampada.png" style="margin-top: 10%; opacity: 0.5; position:absolute;" width="50" height="80" /></center> 
+    <div class="container">
+
+        <div class="d-flex justify-content-center" id='caixaDescritiva' style="z-index:10;">
+
+            <div id="descritiva">
+
+                <p id="fecharDescritiva" onclick="fechafundo()">X</p>
+                <br />
+
+                <form id="formulario">
+                    <label for="nomeVariavel">Digite o nome da variavel:</label>
+                    <input type="text" size="33" id="nomeVariavel" name="nomevariavel" />
+
+                    <p> Selecione o tipo de entrada de dados:</p>
+                    <input type="radio" name="entrada" value="manual" id="eManual" onclick="entradaDados('manual')" />
+                    <label for="eManual">Manual</label>
+
+
+                    <input type="radio" name="entrada" value="arquivo" id="eArquivo"
+                        onclick="entradaDados('arquivo')" />
+                    <label for="eArquivo">Arquivo</label><br />
+
+                    <p id="PselecaoVariavel">selecione o tipo de variável: </p>
+
+                    <input type="radio" name="variavel" value="Discreta" id="discreta" onclick="limpaDiv()" />
+                    <label for="discreta">Discreta</label>
+
+                    <input type="radio" name="variavel" value="Continua" id="continua" onclick="limpaDiv()" />
+                    <label for="continua">Contínua</label>
+
+
+
+                    <input type="radio" name="variavel" value="Nominal" id="nominal" onclick="limpaDiv()" />
+                    <label for="nominal">Nominal</label>
+
+                    <input type="radio" name="variavel" value="Ordinal" id="ordinal" onclick="variaveisOrdem()" />
+                    <label for="ordinal">Ordinal</label>
+
+
+                    <a id="CarregamentoMaster" style="width: 100px;" href="#" onclick="validação()" class="btn btn-info">
+                        processar!
+                    </a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="footer footerpos">
+        <div class="d-flex justify-content-center">
+            <b>(16) 99321-1233</b>
+            <b>info@Migueleiros.com</b>
+            <b>© Migueleiros 2019. All Rights Reserved.</b>
+        </div>
+    </footer>
+</body>
+
+<script>
+    janelaArquivo = false
+    janelaManual = false
+
+    tManual = false
+    tArquivo = false
+    tDisCont = false
+    tNominal = false
+    tOrdinal = false
+</script>
+<script>
+    
+    carregarArquivo = function () {
+        
+        if(document.getElementById('formulario').variavel.value=='Ordinal'){
+            document.getElementById('formulario').variavel.value='Nominal'
+            if(document.getElementById('caixa')!=null)
+            document.getElementById('caixa').innerHTML=null
+        }
+
+
+        entradaCsv = document.getElementById('entradaArquivo')
+        entradaCsv = entradaCsv.files[0]
+        if (entradaCsv.type != 'application/vnd.ms-excel' && entradaCsv.type != 'text/plain') {
+            alert('Tipo de arquivo inválido.Selecione um arquivo do tipo .txt ou .csv')
+            document.getElementById('entradaArquivo').value = ''
+        }
+        leitor = new FileReader()
+        leitor.readAsText(entradaCsv)
+
+        leitor.onload = function () {
+            entrada = leitor.result
+
+        }
+
+
+
+
+    }
+    entradaDescritiva = function () {
+        
+        if(document.getElementById('divCorrelação')!=null){
+           document.body.removeChild(document.getElementById('divCorrelação'))
+        }
+        
+        if(document.getElementById('caixaExterna')!=null){
+
+            document.body.removeChild(document.getElementById('caixaExterna'))
+        }
+
+        animar('descritiva', 'aparecer')
+        document.getElementById('descritiva').style.display = 'block'
+        document.getElementById("fundoOpaco").style.display='block'
+    }
+
+
+    entradaDados = function (x) {
+
+
+        if (x == 'manual') {
+            animarDescritiva('manual')
+            if (document.getElementById('entradaArquivo') != null) {
+                document.getElementById('formulario').removeChild(document.getElementById('entradaArquivo'))
+                document.getElementById('formulario').removeChild(document.getElementById('explicação'))
+            }
+            if (document.getElementById('entradaUsuario') == null) {
+
+                entradaManual = document.getElementById('formulario').insertBefore(document.createElement('textarea'), document.getElementById('PselecaoVariavel'))
+                entradaManual.style.width = '400px'
+                entradaManual.style.height = '50px'
+                entradaManual.setAttribute('id', 'entradaUsuario')
+                explicação = document.getElementById('formulario').insertBefore(document.createElement('p'), document.getElementById('entradaUsuario'))
+                explicação.innerText = 'Digite os dados separando-os com ";", Ex: 1;2;3;1,5;7,8.'
+                explicação.setAttribute('id', 'explicação')
+
+            }
+        }
+        else {
+            animarDescritiva('arquivo')
+
+            if (document.getElementById('entradaUsuario') != null) {
+                document.getElementById('formulario').removeChild(document.getElementById('entradaUsuario'))
+                document.getElementById('formulario').removeChild(document.getElementById('explicação'))
+            }
+            if (document.getElementById('entradaArquivo') == null) {
+                entradaArquivo = document.getElementById('formulario').insertBefore(document.createElement('input'), document.getElementById('PselecaoVariavel'))
+                entradaArquivo.setAttribute('id', 'entradaArquivo')
+                entradaArquivo.setAttribute('type', 'file')
+                entradaArquivo.setAttribute('value', 'procurar')
+                entradaArquivo.setAttribute('onchange', 'carregarArquivo()')
+                explicação = document.getElementById('formulario').insertBefore(document.createElement('p'), document.getElementById('entradaArquivo'))
+                explicação.innerText = 'Selecione um arquivo do tipo .csv:'
+                explicação.setAttribute('id', 'explicação')
+
+
+
+
+
+            }
+
+        }
+
+    }
+
+</script>
+
+
+
+<script src="../Scripts/funcoes.js"> </script>
+<script src="../Scripts/validacãoDados.js"> </script>
+<script src="../Scripts/OrdenaçãoVariavelOrdinal.js"> </script>
+<script src="../Scripts/armazenamentoDados.js"></script>
+<script src="../Scripts/AdicionarOpçãoAmostraOuPopulaçãoELimparCaixaOrdenação.js"></script>
+<script src="../Scripts/calculadoraEstatistica.js"></script>
+<script src="../Scripts/TabelaDB.js"></script>
+<script src="../Scripts/construtorDeElementosDaCalculadora.js"></script>
+<script src="../Scripts/verificadorEntradasCalculadora.js"></script>
+<script src="../Scripts/Correlação.js"></script>
+<script src="../Scripts/animar.js"></script>
+<script src="../Scripts/animarDescritiva.js"></script>
+<script src="../Scripts/animarCorrelação.js"></script>
+
+
+
+</html>

@@ -1,0 +1,480 @@
+body{
+    margin-left: auto;
+    margin-right: auto;
+}
+label {
+    padding-right: 15px
+}
+
+select {
+    padding: 5px;
+    margin-right: 5px
+}
+#entradaArquivo{
+    margin-bottom: 10px
+}
+
+#CarregamentoMaster {
+    display: block;
+    margin-top: 15px
+}
+
+h3 {
+    cursor: pointer;
+
+    border: 2px solid black;
+    width: 190px
+}
+
+#caixaExterna {
+    margin-top: 1%;
+    margin-left: 28%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    position: absolute;
+    width:600px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#caixaInterna {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 95%;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px
+
+
+
+}
+
+
+.inputCalc {
+    width: 80px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 2px;
+
+
+    
+}
+.inputValores{
+    width: 70px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 3px;
+    border:1px solid black
+    
+
+}
+.inputCalc btn btn-info{
+    height: 20px;
+}
+#inputEventos{
+    width:200px;
+}
+
+#fechar {
+    float: right;
+    cursor: pointer
+}
+
+h2 {
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#botaocalc {
+    float: right;
+
+
+}
+
+.botões {
+    display: inline;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+
+#caixaBotões {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0%;
+    width: 191px;
+    height: 40px;
+    margin-bottom: 10px;
+
+}
+
+#teste {
+    display: none;
+}
+
+#descritiva {
+    position: absolute;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    z-index: 11;
+    display: none;
+    background-color:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.frente{
+    z-index: 11;
+}
+#fecharDescritiva{
+    float:right;
+    cursor: pointer;
+}
+
+#pFechar{
+    float: right;
+    cursor: pointer;
+}
+#pInstrução{
+    margin-top: 15px;
+}
+#divCorrelação{ 
+    z-index: 11;
+    position: absolute;
+    top:80;
+    left:23%;
+    padding: 30px;
+    border:1px solid #ddd; 
+    background-color:white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#valoresDependente, #valoresIndependente{
+    width: 282px
+}
+
+
+#nomeVariavel{
+    border:1px solid black;
+    border-radius: 5px
+
+}
+#entradaUsuario{
+    border-radius: 5px;
+    border:1px solid black;
+}
+
+#imgfundo2{
+    z-index: 0;
+    background-color: #0F1B3E;
+}
+
+#nav {
+    height: 60px;
+}
+
+#menulist{
+    list-style: none;
+}
+#menulist li{
+    float: right;
+    padding: 30px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#menulist li a {
+    color: #0FB0BE;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#menulist2{
+    list-style: none;
+}
+#menulist2 li{
+    z-index: 5;
+    float: right;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+#menulist2 li a {
+    color: #0FB0BE;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+#sobre{
+    width: 60%;
+    font-size: 26px;
+    color: white;
+}
+#logoicon{
+    width: 240px;
+}
+#arquivoC{
+    margin-bottom: 10px;
+}
+
+#imgfundo{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+#landingpage{
+    margin-top: 10%;
+    width: 100%;
+}
+
+#landingpage p {
+    z-index: 2;
+    position: absolute;
+    top: 240px;
+    margin-top: 4%;
+    color:white;
+    font-size: 22px;
+}
+#logop{
+    z-index: 2;
+    position: absolute;
+    left: 35%;
+    top: 200px;
+}
+
+#info{
+    background-color: #fff;
+    width: 100%;
+    height: 430px;
+    color: #0FB0BE;
+}
+#subtitle{
+    width: 40%;
+}
+#info p{
+    width: 60%;
+    font-size: 18px;
+    color: black;
+}
+
+#subtitle{
+    margin-top: -5%;
+}
+
+#informacoes{
+    margin-top: 5%;
+}
+
+#informacoes p{
+    margin-top: 5%;
+    font-size: 18px;
+    width: 100%;
+    color: black;
+}
+
+#footer{
+    bottom: 0;
+    background-color: #515151;
+    width: 100%;
+    height: 45px;
+    z-index: -100;
+}
+
+.footerpos{
+    position: absolute;
+}
+
+#footer b{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.footerindex{
+    margin-top: 50px;
+}
+#logologin{
+    width: 100%;
+    padding: 10%;
+}
+
+#botoesmenu{
+    list-style: none;
+}
+
+.informacoesButton{
+    margin-left: 5%;
+}
+.informacoesButton button{
+    float: left;
+    width: 200px;
+}
+
+#formulario{
+    border-radius: 30px;
+}
+
+#divQuartil,
+    #divQuintil,
+    #divPercentil,
+    #divDecil
+        {
+        width: 250px;
+        height: 100px;
+        padding: 20px;
+        margin-top: -18px;
+
+        display: none
+    }
+
+    option {
+        text-align: center
+    }
+
+    select {
+        text-align: center
+    }
+
+    #Centro,
+    #caixaDispersão {
+        width: 200px;
+        height: 100px;
+        margin-top: -18px;
+        padding: 20px;
+        display: none
+    }
+
+    #divCanvas {
+        width: 50%;
+        height: 50%;
+        display: none
+    }
+
+    #caixaMedidas {
+        float: left;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        width: 400px;
+        height: 250px;
+        display: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #caixaMedidas h4 {
+        text-align: center;
+    }
+    #TQD_topo {
+        background-color: #ccc
+    }
+
+    #TQD tr:nth-child(even) {
+        background-color: #f0f0f0
+    }
+
+    #TQD tr:hover {
+        background: #ddd;
+    }
+
+    #TQD th {
+        width: 22%;
+    }
+    #TQD tr td{
+        font-size: 20px;
+    }
+    table{
+        border: 1px solid #ccc
+    }
+ 
+    
+
+    #selectCaixas {
+        float: left;
+
+    }
+
+    #pSelecione {
+        display: block;
+        margin-bottom: 0px;
+        margin-top: 0.5px;
+
+    }
+
+    #selecionado {
+        float: left;
+        margin-left: 10px;
+        margin-top: 0px;
+    }
+
+    #selectQ,
+    #selectK{
+        width: 100px;
+    }
+    #elementosFixos {
+        float: left;
+        margin-left: 10px
+    }
+
+    #resultadoQuartil,
+    #resultadoQuintil,
+    #resultadoDecil,
+    #resultadoPercentil {
+        text-align: center;
+        font-weight: bold;
+        margin-top: -15px;
+        font-size: 60px
+    }
+
+    #paragrafoMedia,
+    #paragrafoMediana,
+    #paragrafoModa,
+    #paragrafoDesvioPadrão,
+    #paragrafoCoeficiente {
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 0.3px;
+        margin-bottom: 1px;
+
+    }
+
+    form {
+        display: inline
+    }
+
+    #tabelaMedidasGrafico {
+        width: 100%;
+    }
+
+
+    #tituloGrafico {
+        text-align: center;
+        font-size: 20px;
+
+    }
+
+    #botõesMostrar button{
+        margin: 2% 2%;
+    }
+
+    #dados{
+        width: 100%;
+    }
+
+    #fundoOpaco{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.1;
+        z-index: 9;
+        display: none;
+    }
