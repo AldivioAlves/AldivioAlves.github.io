@@ -75,7 +75,7 @@ animarDescritiva = function (solicitante) {
     }
 
     if (solicitante == 'nominal') {
-        if (tNominal) {
+        if (tNominal || !tDisCont) {
             return
         } 
         if (tDisCont && tManual) {
