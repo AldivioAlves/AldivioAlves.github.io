@@ -194,7 +194,7 @@ calculadora = function () {
 
                     for (i = 0; i < k.length; i++) {
                         resultado += ((fat(n) / (fat(k[i]) * fat(n - k[i]))) * Math.pow(p, k[i]) * Math.pow(q, n - k[i])) * 100
-                        alert(resultado)
+                        
                     }
                     resultado = resultado.toFixed(2)
 
