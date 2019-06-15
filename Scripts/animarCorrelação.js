@@ -7,7 +7,7 @@ animarCorrelação = function(tipoEntrada){
     if(tipoEntrada=='manual'){
        
         if(janelaManual){
-alert(janelaManual)
+
             return
         }
 
