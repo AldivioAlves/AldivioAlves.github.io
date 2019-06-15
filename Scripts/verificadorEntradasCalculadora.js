@@ -48,12 +48,12 @@ verificadorEntradas = function (x) {
             return -1
 
         }
-        if (n1== '' || isNaN(n1)) {
+        if (n1 == '' || isNaN(n1)) {
             alert('Verifique a entrada da Entrada "Entre". \n O campo não pode estar vazio ou com valores que não seja numero')
             return -1
 
         }
-        if (n2== '' || isNaN(n2)) {
+        if (n2 == '' || isNaN(n2)) {
             alert('Verifique a entrada da Entrada "E". \n O campo não pode estar vazio ou com valores que não seja numero')
             return -1
 

@@ -21,7 +21,8 @@
         </div>
     </div>
     <p id='calc'></p>
-    <center><img src="../imgs/lampada.png" style="margin-top: 10%; opacity: 0.5; position:absolute;" width="50" height="80" /></center> 
+    <center><img src="../imgs/lampada.png" style="margin-top: 10%; opacity: 0.5; position:absolute;" width="50"
+            height="80" /></center>
     <div class="container">
 
         <div class="d-flex justify-content-center" id='caixaDescritiva' style="z-index:10;">
@@ -61,7 +62,8 @@
                     <label for="ordinal">Ordinal</label>
 
 
-                    <a id="CarregamentoMaster" style="width: 100px;" href="#" onclick="validação()" class="btn btn-info">
+                    <a id="CarregamentoMaster" style="width: 100px;" href="#" onclick="validação()"
+                        class="btn btn-info">
                         processar!
                     </a>
 
@@ -90,16 +92,18 @@
     tOrdinal = false
 </script>
 <script>
-    
+
     carregarArquivo = function () {
-        
-        if(document.getElementById('formulario').variavel.value=='Ordinal'){
-            document.getElementById('formulario').variavel.value='Nominal'
-            if(document.getElementById('caixa')!=null)
-            document.getElementById('caixa').innerHTML=null
+
+        if (document.getElementById('formulario').variavel.value == 'Ordinal') {
+            document.getElementById('formulario').variavel.value = 'Nominal'
+            if (document.getElementById('caixa') != null)
+                document.getElementById('caixa').innerHTML = null
         }
+        if (document.getElementById('formulario').variavel.value == 'Ordinal' || document.getElementById('formulario').variavel.value == 'Discreta') {
+            document.getElementById('formulario').variavel.value = 'Nominal'
 
-
+        }
         entradaCsv = document.getElementById('entradaArquivo')
         entradaCsv = entradaCsv.files[0]
         if (entradaCsv.type != 'application/vnd.ms-excel' && entradaCsv.type != 'text/plain') {
@@ -119,19 +123,19 @@
 
     }
     entradaDescritiva = function () {
-        
-        if(document.getElementById('divCorrelação')!=null){
-           document.body.removeChild(document.getElementById('divCorrelação'))
+
+        if (document.getElementById('divCorrelação') != null) {
+            document.body.removeChild(document.getElementById('divCorrelação'))
         }
-        
-        if(document.getElementById('caixaExterna')!=null){
+
+        if (document.getElementById('caixaExterna') != null) {
 
             document.body.removeChild(document.getElementById('caixaExterna'))
         }
 
         animar('descritiva', 'aparecer')
         document.getElementById('descritiva').style.display = 'block'
-        document.getElementById("fundoOpaco").style.display='block'
+        document.getElementById("fundoOpaco").style.display = 'block'
     }
 
 
