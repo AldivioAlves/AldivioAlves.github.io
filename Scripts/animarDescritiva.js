@@ -64,7 +64,7 @@ animarDescritiva = function (solicitante) {
             tFinal = 500
         }
         if (!tManual && !tArquivo) {
-            alert('aqui')
+            
             tFinal = 400
         }
         if (tManual) {
@@ -130,7 +130,7 @@ animarDescritiva = function (solicitante) {
         tNominal = false
         tDisCont = false
     }
-    //alert(` solicitante = ${solicitante}\n Incial= ${tInicial} final= ${tFinal}`)
+   
 
     CaixaD.animate([{ height: String(tInicial) + 'px' }, { height: String(tFinal) + 'px' }], { duration: 200 })
     CaixaD.style.height = String(tFinal) + 'px'
