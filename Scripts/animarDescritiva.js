@@ -63,6 +63,9 @@ animarDescritiva = function (solicitante) {
         if(tOrdinal && tManual){
             tFinal=500
         }
+        if(!tManual&&!tArquivo){
+            tFinal= 413
+        }
         if(tManual){
             tFinal=500
         }
@@ -78,6 +81,9 @@ animarDescritiva = function (solicitante) {
         if (tNominal || !tDisCont) {
             return
         } 
+        if(!tArquivo&&!tManual){
+            return
+        }
         if (tDisCont && tManual) {
 
             tFinal = 420    
